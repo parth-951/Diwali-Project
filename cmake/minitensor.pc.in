@@ -1,0 +1,12 @@
+# Relocatable: paths are relative to this file (<prefix>/<libdir>/pkgconfig).
+prefix=${pcfiledir}/../..
+exec_prefix=${prefix}
+libdir=${prefix}/@CMAKE_INSTALL_LIBDIR@
+includedir=${prefix}/@CMAKE_INSTALL_INCLUDEDIR@
+
+Name: minitensor
+Description: @PROJECT_DESCRIPTION@
+Version: @PROJECT_VERSION@
+URL: @PROJECT_HOMEPAGE_URL@
+Libs: -L${libdir} -lminitensor @MINITENSOR_PC_OPENMP_FLAGS@
+Cflags: -I${includedir}

@@ -1,7 +1,6 @@
 
 #include "minitensor/Ops.h"
 
-#include <omp.h>
 #include <stdexcept>
 #include <vector>
 #include <cstddef>
@@ -321,7 +320,10 @@ Tensor matmul_parallel(const Tensor& a, const Tensor& b)
     const double* B = b.data();
     double* C = result.data();
 
+    // Without OpenMP (MINITENSOR_USE_OPENMP=OFF) this runs sequentially.
+#ifdef _OPENMP
     #pragma omp parallel for schedule(static)
+#endif
     for (long long i = 0;
          i < static_cast<long long>(rows_a); ++i)
     {

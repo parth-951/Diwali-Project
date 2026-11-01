@@ -1,0 +1,79 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    name: ${{ matrix.os }} / ${{ matrix.compiler }} / OpenMP ${{ matrix.openmp }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: ubuntu-22.04, compiler: gcc,   cc: gcc,   cxx: g++,     openmp: "ON" }
+          - { os: ubuntu-22.04, compiler: clang, cc: clang, cxx: clang++, openmp: "ON" }
+          - { os: ubuntu-24.04, compiler: gcc,   cc: gcc,   cxx: g++,     openmp: "ON" }
+          - { os: ubuntu-22.04, compiler: gcc,   cc: gcc,   cxx: g++,     openmp: "OFF" }
+
+    env:
+      CC: ${{ matrix.cc }}
+      CXX: ${{ matrix.cxx }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libomp-dev pkg-config
+
+      - name: Configure
+        run: >
+          cmake -S . -B build
+          -DCMAKE_BUILD_TYPE=Release
+          -DMINITENSOR_USE_OPENMP=${{ matrix.openmp }}
+
+      - name: Build
+        run: cmake --build build -j
+
+      - name: Test
+        run: ctest --test-dir build --output-on-failure
+
+      - name: Install
+        run: cmake --install build --prefix "$RUNNER_TEMP/minitensor"
+
+      - name: Build a project against the installed library
+        run: |
+          cmake -S examples/consumer -B build-consumer -DCMAKE_PREFIX_PATH="$RUNNER_TEMP/minitensor"
+          cmake --build build-consumer
+          ./build-consumer/consumer
+
+      - name: Build a program with pkg-config
+        run: |
+          export PKG_CONFIG_PATH="$RUNNER_TEMP/minitensor/lib/pkgconfig"
+          $CXX -std=c++17 examples/consumer/main.cpp $(pkg-config --cflags --libs minitensor) -o consumer-pc
+          ./consumer-pc
+
+  sanitizers:
+    name: AddressSanitizer + UndefinedBehaviorSanitizer
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure
+        run: >
+          cmake -S . -B build
+          -DCMAKE_BUILD_TYPE=Debug
+          -DMINITENSOR_USE_OPENMP=OFF
+          -DMINITENSOR_BUILD_BENCHMARKS=OFF
+          "-DCMAKE_CXX_FLAGS=-fsanitize=address,undefined -fno-omit-frame-pointer -fno-sanitize-recover=all"
+
+      - name: Build
+        run: cmake --build build -j
+
+      - name: Test
+        run: ctest --test-dir build --output-on-failure
