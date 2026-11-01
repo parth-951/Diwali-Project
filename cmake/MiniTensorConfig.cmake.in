@@ -1,0 +1,14 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+
+# A static MiniTensor built with OpenMP needs the OpenMP runtime at link time.
+set(MINITENSOR_WITH_OPENMP @MINITENSOR_WITH_OPENMP@)
+
+if(MINITENSOR_WITH_OPENMP)
+    find_dependency(OpenMP COMPONENTS CXX)
+endif()
+
+include("${CMAKE_CURRENT_LIST_DIR}/MiniTensorTargets.cmake")
+
+check_required_components(MiniTensor)

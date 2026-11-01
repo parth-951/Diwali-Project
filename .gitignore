@@ -1,6 +1,16 @@
 build/
+build-*/
 build-release/
+out/
 *.o
 *.obj
 *.a
+*.so
+*.so.*
+*.dll
 *.exe
+.vscode/
+.idea/
+.cache/
+compile_commands.json
+CMakeUserPresets.json
