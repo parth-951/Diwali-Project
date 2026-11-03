@@ -17,6 +17,7 @@ else()
 endif()
 
 option(MINITENSOR_USE_OPENMP "Use OpenMP for parallel matrix multiplication" ON)
+option(MINITENSOR_USE_CUDA "Build the optional CUDA backend (needs the CUDA Toolkit)" OFF)
 option(MINITENSOR_BUILD_TESTS "Build the test suite" ${MINITENSOR_IS_TOP_LEVEL})
 option(MINITENSOR_BUILD_EXAMPLES "Build the example applications" ${MINITENSOR_IS_TOP_LEVEL})
 option(MINITENSOR_BUILD_BENCHMARKS "Build the benchmarks" ${MINITENSOR_IS_TOP_LEVEL})
@@ -34,13 +35,17 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 include(GNUInstallDirs)
 
 function(enable_warnings target)
+    # C++ sources only: nvcc doesn't understand these flags.
     if(MSVC)
-        target_compile_options(${target} PRIVATE /W4 /permissive-)
+        target_compile_options(${target} PRIVATE
+            $<$<COMPILE_LANGUAGE:CXX>:/W4>
+            $<$<COMPILE_LANGUAGE:CXX>:/permissive->
+        )
     elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
         target_compile_options(${target} PRIVATE
-            -Wall
-            -Wextra
-            -Wpedantic
+            $<$<COMPILE_LANGUAGE:CXX>:-Wall>
+            $<$<COMPILE_LANGUAGE:CXX>:-Wextra>
+            $<$<COMPILE_LANGUAGE:CXX>:-Wpedantic>
         )
     endif()
 endfunction()
@@ -95,7 +100,24 @@ if(MINITENSOR_USE_OPENMP)
     endif()
 endif()
 
-message(STATUS "MiniTensor ${PROJECT_VERSION}: OpenMP ${MINITENSOR_WITH_OPENMP}")
+# Set CMAKE_CUDA_ARCHITECTURES to your GPU (89 for an RTX 40 series) to build
+# native code. Otherwise nvcc's default target is compiled on first run.
+if(MINITENSOR_USE_CUDA)
+    if(CMAKE_VERSION VERSION_LESS 3.17)
+        message(FATAL_ERROR "MINITENSOR_USE_CUDA needs CMake 3.17 or newer")
+    endif()
+
+    enable_language(CUDA)
+    find_package(CUDAToolkit REQUIRED)
+
+    set(CMAKE_CUDA_STANDARD 17)
+    set(CMAKE_CUDA_STANDARD_REQUIRED ON)
+
+    target_sources(minitensor PRIVATE src/Cuda.cu)
+    target_link_libraries(minitensor PRIVATE CUDA::cublas)
+endif()
+
+message(STATUS "MiniTensor ${PROJECT_VERSION}: OpenMP ${MINITENSOR_WITH_OPENMP}, CUDA ${MINITENSOR_USE_CUDA}")
 
 # ------------------------------------------------------------------ tests
 
@@ -148,6 +170,26 @@ if(MINITENSOR_BUILD_BENCHMARKS)
         target_link_libraries(${benchmark} PRIVATE minitensor)
         enable_warnings(${benchmark})
     endforeach()
+
+    # Used by verification/run_verification.py
+    foreach(tool verify_numerical benchmark_cpu)
+        add_executable(${tool} verification/${tool}.cpp)
+        target_link_libraries(${tool} PRIVATE minitensor)
+        enable_warnings(${tool})
+    endforeach()
+
+    # benchmark_cpu records the thread count, which needs omp.h.
+    if(MINITENSOR_WITH_OPENMP)
+        target_link_libraries(benchmark_cpu PRIVATE OpenMP::OpenMP_CXX)
+    endif()
+
+    if(MINITENSOR_USE_CUDA)
+        target_compile_definitions(verify_numerical PRIVATE MINITENSOR_WITH_CUDA)
+
+        add_executable(benchmark_cuda verification/benchmark_cuda.cpp)
+        target_link_libraries(benchmark_cuda PRIVATE minitensor)
+        enable_warnings(benchmark_cuda)
+    endif()
 endif()
 
 # ------------------------------------------------- install and packaging
@@ -165,7 +207,14 @@ if(MINITENSOR_INSTALL)
         INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
     )
 
-    install(DIRECTORY include/minitensor DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+    if(MINITENSOR_USE_CUDA)
+        install(DIRECTORY include/minitensor DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+    else()
+        install(DIRECTORY include/minitensor DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+            PATTERN "Cuda.h" EXCLUDE
+        )
+    endif()
+
     install(FILES ${PROJECT_BINARY_DIR}/include/minitensor/Version.h
         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/minitensor
     )
