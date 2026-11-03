@@ -1,0 +1,143 @@
+group,case,op,input_shapes,output_shape,expected_outcome,max_abs_error,relative_error,result_hash,status
+matmul,1x1_1x1,matmul,1x1 & 1x1,1x1,matches NumPy,0.000e+00,0.000e+00,3491796231566570090,PASS
+matmul,1x1_1x1,matmul_parallel,1x1 & 1x1,1x1,matches NumPy,0.000e+00,0.000e+00,3491796231566570090,PASS
+matmul,1x7_7x1,matmul,1x7 & 7x1,1x1,matches NumPy,1.819e-12,1.343e-16,1511239539778859589,PASS
+matmul,1x7_7x1,matmul_parallel,1x7 & 7x1,1x1,matches NumPy,1.819e-12,1.343e-16,1511239539778859589,PASS
+matmul,7x1_1x7,matmul,7x1 & 1x7,7x7,matches NumPy,0.000e+00,0.000e+00,10042020488486224465,PASS
+matmul,7x1_1x7,matmul_parallel,7x1 & 1x7,7x7,matches NumPy,0.000e+00,0.000e+00,10042020488486224465,PASS
+matmul,2x3_3x4,matmul,2x3 & 3x4,2x4,matches NumPy,9.095e-13,1.026e-16,2482267868055840872,PASS
+matmul,2x3_3x4,matmul_parallel,2x3 & 3x4,2x4,matches NumPy,9.095e-13,1.026e-16,2482267868055840872,PASS
+matmul,5x2_2x9,matmul,5x2 & 2x9,5x9,matches NumPy,9.095e-13,9.268e-17,2806441912791337012,PASS
+matmul,5x2_2x9,matmul_parallel,5x2 & 2x9,5x9,matches NumPy,9.095e-13,9.268e-17,2806441912791337012,PASS
+matmul,16x16_16x16,matmul,16x16 & 16x16,16x16,matches NumPy,9.095e-12,2.132e-16,10127943938459664100,PASS
+matmul,16x16_16x16,matmul_parallel,16x16 & 16x16,16x16,matches NumPy,9.095e-12,2.132e-16,10127943938459664100,PASS
+matmul,64x128_128x32,matmul,64x128 & 128x32,64x32,matches NumPy,3.638e-11,2.466e-16,2827163833091144287,PASS
+matmul,64x128_128x32,matmul_parallel,64x128 & 128x32,64x32,matches NumPy,3.638e-11,2.466e-16,2827163833091144287,PASS
+matmul,127x512_512x512,matmul,127x512 & 512x512,127x512,matches NumPy,5.239e-10,1.547e-15,10018849419309291568,PASS
+matmul,127x512_512x512,matmul_parallel,127x512 & 512x512,127x512,matches NumPy,5.239e-10,1.547e-15,10018849419309291568,PASS
+matmul,128x256_256x512,matmul,128x256 & 256x512,128x512,matches NumPy,1.164e-10,5.015e-16,6707460522388992992,PASS
+matmul,128x256_256x512,matmul_parallel,128x256 & 256x512,128x512,matches NumPy,1.164e-10,5.015e-16,6707460522388992992,PASS
+matmul,128x64_64x256,matmul,128x64 & 64x256,128x256,matches NumPy,4.366e-11,3.724e-16,9922531724783979891,PASS
+matmul,128x64_64x256,matmul_parallel,128x64 & 64x256,128x256,matches NumPy,4.366e-11,3.724e-16,9922531724783979891,PASS
+matmul,100x100_100x100,matmul,100x100 & 100x100,100x100,matches NumPy,5.821e-11,4.401e-16,11711383754433390083,PASS
+matmul,100x100_100x100,matmul_parallel,100x100 & 100x100,100x100,matches NumPy,5.821e-11,4.401e-16,11711383754433390083,PASS
+matmul,255x256_256x257,matmul,255x256 & 256x257,255x257,matches NumPy,1.455e-10,5.241e-16,9013839002698763070,PASS
+matmul,255x256_256x257,matmul_parallel,255x256 & 256x257,255x257,matches NumPy,1.455e-10,5.241e-16,9013839002698763070,PASS
+matmul,256x256_256x256,matmul,256x256 & 256x256,256x256,matches NumPy,1.164e-10,4.876e-16,157587832509647043,PASS
+matmul,256x256_256x256,matmul_parallel,256x256 & 256x256,256x256,matches NumPy,1.164e-10,4.876e-16,157587832509647043,PASS
+matmul,300x260_260x280,matmul,300x260 & 260x280,300x280,matches NumPy,1.164e-10,5.299e-16,11139617804511857958,PASS
+matmul,300x260_260x280,matmul_parallel,300x260 & 260x280,300x280,matches NumPy,1.164e-10,5.299e-16,11139617804511857958,PASS
+matmul,512x512_512x512,matmul,512x512 & 512x512,512x512,matches NumPy,5.821e-10,1.632e-15,1169117486977410005,PASS
+matmul,512x512_512x512,matmul_parallel,512x512 & 512x512,512x512,matches NumPy,5.821e-10,1.632e-15,1169117486977410005,PASS
+matmul,1024x1024_1024x1024,matmul,1024x1024 & 1024x1024,1024x1024,matches NumPy,1.339e-09,2.549e-15,6278871150065064436,PASS
+matmul,1024x1024_1024x1024,matmul_parallel,1024x1024 & 1024x1024,1024x1024,matches NumPy,1.339e-09,2.549e-15,6278871150065064436,PASS
+matmul,wide_range_200x150_150x100,matmul,200x150 & 150x100,200x100,matches NumPy,9.766e-04,6.718e-16,7841020061342667026,PASS
+matmul_incompatible,2x3_2x3,matmul,2x3 & 2x3,-,rejected,-,-,-,PASS
+matmul_incompatible,3x4_5x6,matmul,3x4 & 5x6,-,rejected,-,-,-,PASS
+matmul_incompatible,1x2_1x2,matmul,1x2 & 1x2,-,rejected,-,-,-,PASS
+broadcast,3x4_3x4,add_broadcast,3x4 & 3x4,3x4,matches NumPy,0.000e+00,0.000e+00,7986794945625172595,PASS
+broadcast,3x4_3x4,subtract_broadcast,3x4 & 3x4,3x4,matches NumPy,0.000e+00,0.000e+00,8273628672682397486,PASS
+broadcast,3x4_3x4,multiply_broadcast,3x4 & 3x4,3x4,matches NumPy,0.000e+00,0.000e+00,12102835832606527797,PASS
+broadcast,3x4_4,add_broadcast,3x4 & 4,3x4,matches NumPy,0.000e+00,0.000e+00,1565947647811354389,PASS
+broadcast,3x4_4,subtract_broadcast,3x4 & 4,3x4,matches NumPy,0.000e+00,0.000e+00,4032936995656668471,PASS
+broadcast,3x4_4,multiply_broadcast,3x4 & 4,3x4,matches NumPy,0.000e+00,0.000e+00,12931201665507085016,PASS
+broadcast,4_3x4,add_broadcast,4 & 3x4,3x4,matches NumPy,0.000e+00,0.000e+00,17396327254224615159,PASS
+broadcast,4_3x4,subtract_broadcast,4 & 3x4,3x4,matches NumPy,0.000e+00,0.000e+00,17602439085444932485,PASS
+broadcast,4_3x4,multiply_broadcast,4 & 3x4,3x4,matches NumPy,0.000e+00,0.000e+00,6995210926510957371,PASS
+broadcast,3x1_1x4,add_broadcast,3x1 & 1x4,3x4,matches NumPy,0.000e+00,0.000e+00,7458768184157066177,PASS
+broadcast,3x1_1x4,subtract_broadcast,3x1 & 1x4,3x4,matches NumPy,0.000e+00,0.000e+00,8744087721902024431,PASS
+broadcast,3x1_1x4,multiply_broadcast,3x1 & 1x4,3x4,matches NumPy,0.000e+00,0.000e+00,17998377302165701672,PASS
+broadcast,1_5x5,add_broadcast,1 & 5x5,5x5,matches NumPy,0.000e+00,0.000e+00,8589692339335810859,PASS
+broadcast,1_5x5,subtract_broadcast,1 & 5x5,5x5,matches NumPy,0.000e+00,0.000e+00,11984605795563391144,PASS
+broadcast,1_5x5,multiply_broadcast,1 & 5x5,5x5,matches NumPy,0.000e+00,0.000e+00,13217588174994474324,PASS
+broadcast,5_1,add_broadcast,5 & 1,5,matches NumPy,0.000e+00,0.000e+00,3042968831530225450,PASS
+broadcast,5_1,subtract_broadcast,5 & 1,5,matches NumPy,0.000e+00,0.000e+00,7907999550229652114,PASS
+broadcast,5_1,multiply_broadcast,5 & 1,5,matches NumPy,0.000e+00,0.000e+00,6590775769645792620,PASS
+broadcast,1x1_1x1,add_broadcast,1x1 & 1x1,1x1,matches NumPy,0.000e+00,0.000e+00,14962745226000272230,PASS
+broadcast,1x1_1x1,subtract_broadcast,1x1 & 1x1,1x1,matches NumPy,0.000e+00,0.000e+00,13936513653344319051,PASS
+broadcast,1x1_1x1,multiply_broadcast,1x1 & 1x1,1x1,matches NumPy,0.000e+00,0.000e+00,15021233037901312003,PASS
+broadcast,2x3x4_3x1,add_broadcast,2x3x4 & 3x1,2x3x4,matches NumPy,0.000e+00,0.000e+00,11811826439544103075,PASS
+broadcast,2x3x4_3x1,subtract_broadcast,2x3x4 & 3x1,2x3x4,matches NumPy,0.000e+00,0.000e+00,4050674714429309310,PASS
+broadcast,2x3x4_3x1,multiply_broadcast,2x3x4 & 3x1,2x3x4,matches NumPy,0.000e+00,0.000e+00,9430452187676375443,PASS
+broadcast,4x1x3_2x3,add_broadcast,4x1x3 & 2x3,4x2x3,matches NumPy,0.000e+00,0.000e+00,11880665824879809875,PASS
+broadcast,4x1x3_2x3,subtract_broadcast,4x1x3 & 2x3,4x2x3,matches NumPy,0.000e+00,0.000e+00,16043731769119597585,PASS
+broadcast,4x1x3_2x3,multiply_broadcast,4x1x3 & 2x3,4x2x3,matches NumPy,0.000e+00,0.000e+00,6395839204100654102,PASS
+broadcast,2x1x3x1_5x1x4,add_broadcast,2x1x3x1 & 5x1x4,2x5x3x4,matches NumPy,0.000e+00,0.000e+00,2501698411720610520,PASS
+broadcast,2x1x3x1_5x1x4,subtract_broadcast,2x1x3x1 & 5x1x4,2x5x3x4,matches NumPy,0.000e+00,0.000e+00,4538005463553794489,PASS
+broadcast,2x1x3x1_5x1x4,multiply_broadcast,2x1x3x1 & 5x1x4,2x5x3x4,matches NumPy,0.000e+00,0.000e+00,3350428961372670585,PASS
+broadcast,1x6x1_7x1x5,add_broadcast,1x6x1 & 7x1x5,7x6x5,matches NumPy,0.000e+00,0.000e+00,17670375541234270228,PASS
+broadcast,1x6x1_7x1x5,subtract_broadcast,1x6x1 & 7x1x5,7x6x5,matches NumPy,0.000e+00,0.000e+00,17018366464756994703,PASS
+broadcast,1x6x1_7x1x5,multiply_broadcast,1x6x1 & 7x1x5,7x6x5,matches NumPy,0.000e+00,0.000e+00,11834527915739503914,PASS
+broadcast,200x300_300,add_broadcast,200x300 & 300,200x300,matches NumPy,0.000e+00,0.000e+00,9780243751467984740,PASS
+broadcast,200x300_300,subtract_broadcast,200x300 & 300,200x300,matches NumPy,0.000e+00,0.000e+00,17793431521245375987,PASS
+broadcast,200x300_300,multiply_broadcast,200x300 & 300,200x300,matches NumPy,0.000e+00,0.000e+00,10504227391013696424,PASS
+broadcast,64x1x32_1x128x1,add_broadcast,64x1x32 & 1x128x1,64x128x32,matches NumPy,0.000e+00,0.000e+00,14520152689919270848,PASS
+broadcast,64x1x32_1x128x1,subtract_broadcast,64x1x32 & 1x128x1,64x128x32,matches NumPy,0.000e+00,0.000e+00,3546931599442616005,PASS
+broadcast,64x1x32_1x128x1,multiply_broadcast,64x1x32 & 1x128x1,64x128x32,matches NumPy,0.000e+00,0.000e+00,46458548434703569,PASS
+broadcast_incompatible,3_4,add_broadcast,3 & 4,-,rejected,-,-,-,PASS
+broadcast_incompatible,3_4,subtract_broadcast,3 & 4,-,rejected,-,-,-,PASS
+broadcast_incompatible,3_4,multiply_broadcast,3 & 4,-,rejected,-,-,-,PASS
+broadcast_incompatible,2x3_3x2,add_broadcast,2x3 & 3x2,-,rejected,-,-,-,PASS
+broadcast_incompatible,2x3_3x2,subtract_broadcast,2x3 & 3x2,-,rejected,-,-,-,PASS
+broadcast_incompatible,2x3_3x2,multiply_broadcast,2x3 & 3x2,-,rejected,-,-,-,PASS
+broadcast_incompatible,2x3x4_3x3,add_broadcast,2x3x4 & 3x3,-,rejected,-,-,-,PASS
+broadcast_incompatible,2x3x4_3x3,subtract_broadcast,2x3x4 & 3x3,-,rejected,-,-,-,PASS
+broadcast_incompatible,2x3x4_3x3,multiply_broadcast,2x3x4 & 3x3,-,rejected,-,-,-,PASS
+broadcast_incompatible,3x4_2x3x5,add_broadcast,3x4 & 2x3x5,-,rejected,-,-,-,PASS
+broadcast_incompatible,3x4_2x3x5,subtract_broadcast,3x4 & 2x3x5,-,rejected,-,-,-,PASS
+broadcast_incompatible,3x4_2x3x5,multiply_broadcast,3x4 & 2x3x5,-,rejected,-,-,-,PASS
+broadcast_incompatible,2x2_4,add_broadcast,2x2 & 4,-,rejected,-,-,-,PASS
+broadcast_incompatible,2x2_4,subtract_broadcast,2x2 & 4,-,rejected,-,-,-,PASS
+broadcast_incompatible,2x2_4,multiply_broadcast,2x2 & 4,-,rejected,-,-,-,PASS
+broadcast_incompatible,5x1x2_5x3,add_broadcast,5x1x2 & 5x3,-,rejected,-,-,-,PASS
+broadcast_incompatible,5x1x2_5x3,subtract_broadcast,5x1x2 & 5x3,-,rejected,-,-,-,PASS
+broadcast_incompatible,5x1x2_5x3,multiply_broadcast,5x1x2 & 5x3,-,rejected,-,-,-,PASS
+transpose,1x1,transpose,1x1,1x1,matches NumPy,0.000e+00,0.000e+00,6273478267429921602,PASS
+transpose,1x6,transpose,1x6,6x1,matches NumPy,0.000e+00,0.000e+00,12934204526860191750,PASS
+transpose,6x1,transpose,6x1,1x6,matches NumPy,0.000e+00,0.000e+00,13145237483144240269,PASS
+transpose,3x5,transpose,3x5,5x3,matches NumPy,0.000e+00,0.000e+00,7628277188367395279,PASS
+transpose,64x128,transpose,64x128,128x64,matches NumPy,0.000e+00,0.000e+00,5244614518749598433,PASS
+transpose,300x200,transpose,300x200,200x300,matches NumPy,0.000e+00,0.000e+00,8068449669749854910,PASS
+transpose,1024x1024,transpose,1024x1024,1024x1024,matches NumPy,0.000e+00,0.000e+00,13052585491619679371,PASS
+elementwise,1,add,1 & 1,1,matches NumPy,0.000e+00,0.000e+00,14549906232195516738,PASS
+elementwise,1,subtract,1 & 1,1,matches NumPy,0.000e+00,0.000e+00,11897710938840427286,PASS
+elementwise,1,multiply,1 & 1,1,matches NumPy,0.000e+00,0.000e+00,13725809964673213091,PASS
+elementwise,9,add,9 & 9,9,matches NumPy,0.000e+00,0.000e+00,16765747375130722370,PASS
+elementwise,9,subtract,9 & 9,9,matches NumPy,0.000e+00,0.000e+00,3550618998514904468,PASS
+elementwise,9,multiply,9 & 9,9,matches NumPy,0.000e+00,0.000e+00,2012310480842907116,PASS
+elementwise,4x6,add,4x6 & 4x6,4x6,matches NumPy,0.000e+00,0.000e+00,11592551213391791875,PASS
+elementwise,4x6,subtract,4x6 & 4x6,4x6,matches NumPy,0.000e+00,0.000e+00,8864663624874870939,PASS
+elementwise,4x6,multiply,4x6 & 4x6,4x6,matches NumPy,0.000e+00,0.000e+00,11791519289286989649,PASS
+elementwise,2x3x4,add,2x3x4 & 2x3x4,2x3x4,matches NumPy,0.000e+00,0.000e+00,3238119560194152735,PASS
+elementwise,2x3x4,subtract,2x3x4 & 2x3x4,2x3x4,matches NumPy,0.000e+00,0.000e+00,15801785960929613203,PASS
+elementwise,2x3x4,multiply,2x3x4 & 2x3x4,2x3x4,matches NumPy,0.000e+00,0.000e+00,9114175641612811007,PASS
+elementwise,256x256,add,256x256 & 256x256,256x256,matches NumPy,0.000e+00,0.000e+00,18430668627296064039,PASS
+elementwise,256x256,subtract,256x256 & 256x256,256x256,matches NumPy,0.000e+00,0.000e+00,5915792212729317354,PASS
+elementwise,256x256,multiply,256x256 & 256x256,256x256,matches NumPy,0.000e+00,0.000e+00,1694876559697679184,PASS
+reduction,1,sum,1,1,matches NumPy,0.000e+00,0.000e+00,977226509337073134,PASS
+reduction,1,mean,1,1,matches NumPy,0.000e+00,0.000e+00,977226509337073134,PASS
+reduction,1,min,1,1,matches NumPy,0.000e+00,0.000e+00,977226509337073134,PASS
+reduction,1,max,1,1,matches NumPy,0.000e+00,0.000e+00,977226509337073134,PASS
+reduction,17,sum,17,1,matches NumPy,2.842e-14,1.634e-16,5388443776431536151,PASS
+reduction,17,mean,17,1,matches NumPy,1.776e-15,1.736e-16,1834085757609560272,PASS
+reduction,17,min,17,1,matches NumPy,0.000e+00,0.000e+00,17239704549501721825,PASS
+reduction,17,max,17,1,matches NumPy,0.000e+00,0.000e+00,2067344090799931577,PASS
+reduction,40x25,sum,40x25,1,matches NumPy,1.364e-12,8.153e-16,5923795439283741991,PASS
+reduction,40x25,mean,40x25,1,matches NumPy,1.332e-15,7.962e-16,1050528067530215610,PASS
+reduction,40x25,min,40x25,1,matches NumPy,0.000e+00,0.000e+00,16898541222994073607,PASS
+reduction,40x25,max,40x25,1,matches NumPy,0.000e+00,0.000e+00,3354089520197454772,PASS
+reduction,1000x1000,sum,1000x1000,1,matches NumPy,5.948e-10,3.663e-14,18101315011320281857,PASS
+reduction,1000x1000,mean,1000x1000,1,matches NumPy,5.933e-16,5.933e-16,3394308240072133627,PASS
+reduction,1000x1000,min,1000x1000,1,matches NumPy,0.000e+00,0.000e+00,3637970798752891651,PASS
+reduction,1000x1000,max,1000x1000,1,matches NumPy,0.000e+00,0.000e+00,2372919283257770269,PASS
+reshape,6_2x3,reshape,6 & 2,2x3,matches NumPy,0.000e+00,0.000e+00,16476962479730359361,PASS
+reshape,2x3_3x2,reshape,2x3 & 2,3x2,matches NumPy,0.000e+00,0.000e+00,1654913474058675571,PASS
+reshape,2x3x4_4x6,reshape,2x3x4 & 2,4x6,matches NumPy,0.000e+00,0.000e+00,9241418092650248593,PASS
+reshape,12_2x2x3,reshape,12 & 3,2x2x3,matches NumPy,0.000e+00,0.000e+00,6021378266073092936,PASS
+reshape_incompatible,6_4x2,reshape,6 & 2,-,rejected,-,-,-,PASS
+reshape_incompatible,2x3_7,reshape,2x3 & 1,-,rejected,-,-,-,PASS
+scope_limit,matmul_rank1_3_3x2,matmul,3 & 3x2,-,rejected,-,-,-,PASS
+scope_limit,transpose_rank3_2x3x4,transpose,2x3x4,-,rejected,-,-,-,PASS
+control,one_value_off_by_1e-6,compare,-,-,must be caught,-,-,-,PASS
+control,wrong_shape,compare,-,-,must be caught,-,-,-,PASS
+control,nan_in_result,compare,-,-,must be caught,-,-,-,PASS
