@@ -2,6 +2,13 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+
+- Optional CUDA backend (`minitensor/Cuda.h`, `-DMINITENSOR_USE_CUDA=ON`, off by default): GPU `matmul` through cuBLAS, plus `transpose`, element-wise operations, broadcasting and `sum`.
+- `verification/`: a comparison with NumPy, CPU and CUDA benchmarks, and reproducibility checks. `run_verification.py` generates `RESULT_VERIFICATION.md` from a real run.
+
 ## [1.0.0] - 2026-11-01
 
 First public release.

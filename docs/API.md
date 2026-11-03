@@ -207,6 +207,37 @@ bool openmp_enabled() noexcept;       // whether it was built with OpenMP
 
 ---
 
+## CUDA backend (`Cuda.h`)
+
+Optional, in namespace `minitensor::cuda`. Available only when the library is built with `-DMINITENSOR_USE_CUDA=ON`. Set `CMAKE_CUDA_ARCHITECTURES` to your GPU, such as `89` for an RTX 40 series, to build native code.
+
+```cpp
+#include "minitensor/Cuda.h"
+
+// Simple form: upload, compute, wait, download
+Tensor c = cuda::matmul(a, b);
+
+// Keeping data on the GPU between operations
+cuda::DeviceTensor gpu_a(a);
+cuda::DeviceTensor gpu_b(b);
+cuda::DeviceTensor gpu_c = cuda::matmul(gpu_a, gpu_b);  // returns before the GPU has finished
+cuda::synchronize();                                    // call this before reading a clock
+Tensor result = gpu_c.download();
+```
+
+| Function | Notes |
+|---|---|
+| `available()` | True when a CUDA device can be used |
+| `device_name()`, `runtime_version()` | Describe the device and CUDA runtime |
+| `synchronize()` | Blocks until all queued GPU work has finished |
+| `add`, `subtract`, `multiply` | Same-shape element-wise operations |
+| `add_broadcast`, `subtract_broadcast`, `multiply_broadcast` | NumPy broadcasting rules, up to 8 dimensions |
+| `matmul` | 2-D only, uses cuBLAS `dgemm` |
+| `transpose` | 2-D only |
+| `sum` | Always blocks, because the answer has to return to the host |
+
+Each operation accepts `Tensor` or `DeviceTensor`. Shape errors throw `std::invalid_argument`, like the CPU functions. CUDA failures, such as running out of GPU memory, throw `std::runtime_error`. `mean`, `min`, `max`, `reshape` and `matmul_parallel` have no GPU version.
+
 ## Lower-level building blocks
 
 These are public, but most users only need `Tensor`.
