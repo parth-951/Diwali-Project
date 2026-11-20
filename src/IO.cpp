@@ -9,9 +9,10 @@ namespace minitensor {
 namespace {
 
 // Print one axis, recursing into the next axis until the innermost one
+template <typename T>
 void print_axis(
     std::ostream& os,
-    const Tensor& tensor,
+    const BasicTensor<T>& tensor,
     std::size_t axis,
     std::size_t offset)
 {
@@ -44,7 +45,8 @@ void print_axis(
 
 }
 
-std::ostream& operator<<(std::ostream& os, const Tensor& tensor)
+template <typename T>
+std::ostream& operator<<(std::ostream& os, const BasicTensor<T>& tensor)
 {
     if (tensor.rank() == 0)
     {
@@ -56,11 +58,17 @@ std::ostream& operator<<(std::ostream& os, const Tensor& tensor)
     return os;
 }
 
-std::string to_string(const Tensor& tensor)
+template <typename T>
+std::string to_string(const BasicTensor<T>& tensor)
 {
     std::ostringstream stream;
     stream << tensor;
     return stream.str();
 }
+
+template std::ostream& operator<<(std::ostream&, const BasicTensor<float>&);
+template std::ostream& operator<<(std::ostream&, const BasicTensor<double>&);
+template std::string to_string(const BasicTensor<float>&);
+template std::string to_string(const BasicTensor<double>&);
 
 }

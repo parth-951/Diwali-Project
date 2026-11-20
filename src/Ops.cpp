@@ -10,9 +10,9 @@ namespace minitensor {
 namespace {
 
 // Validate identical shapes for normal element-wise operations
-void validate_same_shape(const Tensor& a, const Tensor& b)
+void validate_same_shape(const Shape& a, const Shape& b)
 {
-    if (a.shape().dimensions() != b.shape().dimensions())
+    if (a.dimensions() != b.dimensions())
     {
         throw std::invalid_argument(
             "Element-wise operations require identical tensor shapes"
@@ -22,11 +22,11 @@ void validate_same_shape(const Tensor& a, const Tensor& b)
 
 // Calculate the broadcast-compatible output shape
 std::vector<std::size_t> broadcast_shape(
-    const Tensor& a,
-    const Tensor& b)
+    const Shape& a,
+    const Shape& b)
 {
-    const auto& a_dims = a.shape().dimensions();
-    const auto& b_dims = b.shape().dimensions();
+    const auto& a_dims = a.dimensions();
+    const auto& b_dims = b.dimensions();
 
     const std::size_t rank =
         a_dims.size() > b_dims.size()
@@ -107,20 +107,20 @@ std::size_t broadcast_offset(
 }
 
 // Generic broadcasting operation
-template <typename Operation>
-Tensor broadcast_operation(
-    const Tensor& a,
-    const Tensor& b,
+template <typename T, typename Operation>
+BasicTensor<T> broadcast_operation(
+    const BasicTensor<T>& a,
+    const BasicTensor<T>& b,
     Operation operation)
 {
     const std::vector<std::size_t> output_shape =
-        broadcast_shape(a, b);
+        broadcast_shape(a.shape(), b.shape());
 
-    Tensor result(output_shape);
+    BasicTensor<T> result(output_shape);
 
-    const double* a_data = a.data();
-    const double* b_data = b.data();
-    double* result_data = result.data();
+    const T* a_data = a.data();
+    const T* b_data = b.data();
+    T* result_data = result.data();
 
     const auto& a_dims = a.shape().dimensions();
     const auto& b_dims = b.shape().dimensions();
@@ -145,15 +145,16 @@ Tensor broadcast_operation(
 }
 
 // Element-wise addition
-Tensor add(const Tensor& a, const Tensor& b)
+template <typename T>
+BasicTensor<T> add(const BasicTensor<T>& a, const BasicTensor<T>& b)
 {
-    validate_same_shape(a, b);
+    validate_same_shape(a.shape(), b.shape());
 
-    Tensor result(a.shape().dimensions());
+    BasicTensor<T> result(a.shape().dimensions());
 
-    const double* a_data = a.data();
-    const double* b_data = b.data();
-    double* result_data = result.data();
+    const T* a_data = a.data();
+    const T* b_data = b.data();
+    T* result_data = result.data();
 
     for (std::size_t i = 0; i < a.size(); ++i)
     {
@@ -164,15 +165,16 @@ Tensor add(const Tensor& a, const Tensor& b)
 }
 
 // Element-wise subtraction
-Tensor subtract(const Tensor& a, const Tensor& b)
+template <typename T>
+BasicTensor<T> subtract(const BasicTensor<T>& a, const BasicTensor<T>& b)
 {
-    validate_same_shape(a, b);
+    validate_same_shape(a.shape(), b.shape());
 
-    Tensor result(a.shape().dimensions());
+    BasicTensor<T> result(a.shape().dimensions());
 
-    const double* a_data = a.data();
-    const double* b_data = b.data();
-    double* result_data = result.data();
+    const T* a_data = a.data();
+    const T* b_data = b.data();
+    T* result_data = result.data();
 
     for (std::size_t i = 0; i < a.size(); ++i)
     {
@@ -183,15 +185,16 @@ Tensor subtract(const Tensor& a, const Tensor& b)
 }
 
 // Element-wise multiplication
-Tensor multiply(const Tensor& a, const Tensor& b)
+template <typename T>
+BasicTensor<T> multiply(const BasicTensor<T>& a, const BasicTensor<T>& b)
 {
-    validate_same_shape(a, b);
+    validate_same_shape(a.shape(), b.shape());
 
-    Tensor result(a.shape().dimensions());
+    BasicTensor<T> result(a.shape().dimensions());
 
-    const double* a_data = a.data();
-    const double* b_data = b.data();
-    double* result_data = result.data();
+    const T* a_data = a.data();
+    const T* b_data = b.data();
+    T* result_data = result.data();
 
     for (std::size_t i = 0; i < a.size(); ++i)
     {
@@ -202,34 +205,38 @@ Tensor multiply(const Tensor& a, const Tensor& b)
 }
 
 // Broadcasting addition
-Tensor add_broadcast(const Tensor& a, const Tensor& b)
+template <typename T>
+BasicTensor<T> add_broadcast(const BasicTensor<T>& a, const BasicTensor<T>& b)
 {
     return broadcast_operation(
         a, b,
-        [](double x, double y) { return x + y; }
+        [](T x, T y) { return x + y; }
     );
 }
 
 // Broadcasting subtraction
-Tensor subtract_broadcast(const Tensor& a, const Tensor& b)
+template <typename T>
+BasicTensor<T> subtract_broadcast(const BasicTensor<T>& a, const BasicTensor<T>& b)
 {
     return broadcast_operation(
         a, b,
-        [](double x, double y) { return x - y; }
+        [](T x, T y) { return x - y; }
     );
 }
 
 // Broadcasting multiplication
-Tensor multiply_broadcast(const Tensor& a, const Tensor& b)
+template <typename T>
+BasicTensor<T> multiply_broadcast(const BasicTensor<T>& a, const BasicTensor<T>& b)
 {
     return broadcast_operation(
         a, b,
-        [](double x, double y) { return x * y; }
+        [](T x, T y) { return x * y; }
     );
 }
 
 // Hybrid matrix multiplication
-Tensor matmul(const Tensor& a, const Tensor& b)
+template <typename T>
+BasicTensor<T> matmul(const BasicTensor<T>& a, const BasicTensor<T>& b)
 {
     if (a.rank() != 2 || b.rank() != 2)
     {
@@ -266,17 +273,17 @@ Tensor matmul(const Tensor& a, const Tensor& b)
         return matmul_parallel(a, b);
     }
 
-    Tensor result({rows_a, cols_b}, 0.0);
+    BasicTensor<T> result({rows_a, cols_b}, T{});
 
-    const double* a_data = a.data();
-    const double* b_data = b.data();
-    double* result_data = result.data();
+    const T* a_data = a.data();
+    const T* b_data = b.data();
+    T* result_data = result.data();
 
     for (std::size_t i = 0; i < rows_a; ++i)
     {
         for (std::size_t k = 0; k < cols_a; ++k)
         {
-            const double value = a_data[i * cols_a + k];
+            const T value = a_data[i * cols_a + k];
 
             for (std::size_t j = 0; j < cols_b; ++j)
             {
@@ -290,7 +297,8 @@ Tensor matmul(const Tensor& a, const Tensor& b)
 }
 
 // OpenMP parallel matrix multiplication
-Tensor matmul_parallel(const Tensor& a, const Tensor& b)
+template <typename T>
+BasicTensor<T> matmul_parallel(const BasicTensor<T>& a, const BasicTensor<T>& b)
 {
     if (a.rank() != 2 || b.rank() != 2)
     {
@@ -314,11 +322,11 @@ Tensor matmul_parallel(const Tensor& a, const Tensor& b)
         );
     }
 
-    Tensor result({rows_a, cols_b}, 0.0);
+    BasicTensor<T> result({rows_a, cols_b}, T{});
 
-    const double* A = a.data();
-    const double* B = b.data();
-    double* C = result.data();
+    const T* A = a.data();
+    const T* B = b.data();
+    T* C = result.data();
 
     // Without OpenMP (MINITENSOR_USE_OPENMP=OFF) this runs sequentially.
 #ifdef _OPENMP
@@ -329,7 +337,7 @@ Tensor matmul_parallel(const Tensor& a, const Tensor& b)
     {
         for (std::size_t k = 0; k < cols_a; ++k)
         {
-            const double value = A[i * cols_a + k];
+            const T value = A[i * cols_a + k];
 
             for (std::size_t j = 0; j < cols_b; ++j)
             {
@@ -343,7 +351,8 @@ Tensor matmul_parallel(const Tensor& a, const Tensor& b)
 }
 
 // Tensor transpose
-Tensor transpose(const Tensor& a)
+template <typename T>
+BasicTensor<T> transpose(const BasicTensor<T>& a)
 {
     if (a.rank() != 2)
     {
@@ -357,10 +366,10 @@ Tensor transpose(const Tensor& a)
     const std::size_t rows = dimensions[0];
     const std::size_t cols = dimensions[1];
 
-    Tensor result({cols, rows});
+    BasicTensor<T> result({cols, rows});
 
-    const double* input = a.data();
-    double* output = result.data();
+    const T* input = a.data();
+    T* output = result.data();
 
     for (std::size_t i = 0; i < rows; ++i)
     {
@@ -374,30 +383,34 @@ Tensor transpose(const Tensor& a)
 }
 
 // Addition operator
-Tensor operator+(const Tensor& a, const Tensor& b)
+template <typename T>
+BasicTensor<T> operator+(const BasicTensor<T>& a, const BasicTensor<T>& b)
 {
     return add(a, b);
 }
 
 // Subtraction operator
-Tensor operator-(const Tensor& a, const Tensor& b)
+template <typename T>
+BasicTensor<T> operator-(const BasicTensor<T>& a, const BasicTensor<T>& b)
 {
     return subtract(a, b);
 }
 
 // Multiplication operator
-Tensor operator*(const Tensor& a, const Tensor& b)
+template <typename T>
+BasicTensor<T> operator*(const BasicTensor<T>& a, const BasicTensor<T>& b)
 {
     return multiply(a, b);
 }
 
 // Phase 4: Reduction Operations
 
-double sum(const Tensor& a)
+template <typename T>
+double sum(const BasicTensor<T>& a)
 {
     double result = 0.0;
 
-    const double* input = a.data();
+    const T* input = a.data();
 
     for (std::size_t i = 0; i < a.size(); ++i)
     {
@@ -407,7 +420,8 @@ double sum(const Tensor& a)
     return result;
 }
 
-double mean(const Tensor& a)
+template <typename T>
+double mean(const BasicTensor<T>& a)
 {
     if (a.size() == 0)
     {
@@ -419,7 +433,8 @@ double mean(const Tensor& a)
     return sum(a) / static_cast<double>(a.size());
 }
 
-double min(const Tensor& a)
+template <typename T>
+T min(const BasicTensor<T>& a)
 {
     if (a.size() == 0)
     {
@@ -428,8 +443,8 @@ double min(const Tensor& a)
         );
     }
 
-    const double* input = a.data();
-    double result = input[0];
+    const T* input = a.data();
+    T result = input[0];
 
     for (std::size_t i = 1; i < a.size(); ++i)
     {
@@ -442,7 +457,8 @@ double min(const Tensor& a)
     return result;
 }
 
-double max(const Tensor& a)
+template <typename T>
+T max(const BasicTensor<T>& a)
 {
     if (a.size() == 0)
     {
@@ -451,8 +467,8 @@ double max(const Tensor& a)
         );
     }
 
-    const double* input = a.data();
-    double result = input[0];
+    const T* input = a.data();
+    T result = input[0];
 
     for (std::size_t i = 1; i < a.size(); ++i)
     {
@@ -464,5 +480,29 @@ double max(const Tensor& a)
 
     return result;
 }
+
+// The two supported element types
+#define MINITENSOR_INSTANTIATE_OPS(T)                                              \
+    template BasicTensor<T> add(const BasicTensor<T>&, const BasicTensor<T>&);           \
+    template BasicTensor<T> subtract(const BasicTensor<T>&, const BasicTensor<T>&);      \
+    template BasicTensor<T> multiply(const BasicTensor<T>&, const BasicTensor<T>&);      \
+    template BasicTensor<T> matmul(const BasicTensor<T>&, const BasicTensor<T>&);        \
+    template BasicTensor<T> matmul_parallel(const BasicTensor<T>&, const BasicTensor<T>&); \
+    template BasicTensor<T> transpose(const BasicTensor<T>&);                            \
+    template BasicTensor<T> add_broadcast(const BasicTensor<T>&, const BasicTensor<T>&); \
+    template BasicTensor<T> subtract_broadcast(const BasicTensor<T>&, const BasicTensor<T>&); \
+    template BasicTensor<T> multiply_broadcast(const BasicTensor<T>&, const BasicTensor<T>&); \
+    template double sum(const BasicTensor<T>&);                                         \
+    template double mean(const BasicTensor<T>&);                                        \
+    template T min(const BasicTensor<T>&);                                              \
+    template T max(const BasicTensor<T>&);                                              \
+    template BasicTensor<T> operator+(const BasicTensor<T>&, const BasicTensor<T>&);     \
+    template BasicTensor<T> operator-(const BasicTensor<T>&, const BasicTensor<T>&);     \
+    template BasicTensor<T> operator*(const BasicTensor<T>&, const BasicTensor<T>&);
+
+MINITENSOR_INSTANTIATE_OPS(float)
+MINITENSOR_INSTANTIATE_OPS(double)
+
+#undef MINITENSOR_INSTANTIATE_OPS
 
 }

@@ -3,43 +3,57 @@
 #define MINITENSOR_STORAGE_H
 
 #include <cstddef>
+#include <type_traits>
 
 namespace minitensor {
 
-class Storage {
+// Aligned, contiguous element buffer. T is float or double.
+template <typename T>
+class BasicStorage {
+    static_assert(
+        std::is_same<T, float>::value || std::is_same<T, double>::value,
+        "MiniTensor elements must be float or double"
+    );
+
 private:
     static constexpr std::size_t ALIGNMENT = 64;
 
-    double* buffer_;
+    T* buffer_;
     std::size_t size_;
 
     void allocate(std::size_t size);
     void release() noexcept;
 
 public:
-    explicit Storage(
+    explicit BasicStorage(
         std::size_t size,
-        double initialValue = 0.0
+        T initialValue = T{}
     );
 
-    ~Storage();
+    ~BasicStorage();
 
-    Storage(const Storage& other);
-    Storage& operator=(const Storage& other);
+    BasicStorage(const BasicStorage& other);
+    BasicStorage& operator=(const BasicStorage& other);
 
-    Storage(Storage&& other) noexcept;
-    Storage& operator=(Storage&& other) noexcept;
+    BasicStorage(BasicStorage&& other) noexcept;
+    BasicStorage& operator=(BasicStorage&& other) noexcept;
 
     std::size_t size() const noexcept;
     std::size_t capacity() const noexcept;
 
-    double* data() noexcept;
-    const double* data() const noexcept;
+    T* data() noexcept;
+    const T* data() const noexcept;
 
-    void fill(double value);
+    void fill(T value);
 
-    void swap(Storage& other) noexcept;
+    void swap(BasicStorage& other) noexcept;
 };
+
+// Defined in Storage.cpp for these two element types only
+extern template class BasicStorage<float>;
+extern template class BasicStorage<double>;
+
+using Storage = BasicStorage<double>;
 
 }
 

@@ -10,9 +10,11 @@ namespace minitensor {
 
 // Phase 6: Print tensors as nested row-major brackets, e.g. [[1, 2], [3, 4]].
 // Scalars print as a bare value and empty tensors as [].
-std::ostream& operator<<(std::ostream& os, const Tensor& tensor);
+template <typename T>
+std::ostream& operator<<(std::ostream& os, const BasicTensor<T>& tensor);
 
-std::string to_string(const Tensor& tensor);
+template <typename T>
+std::string to_string(const BasicTensor<T>& tensor);
 
 }
 

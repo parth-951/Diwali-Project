@@ -140,6 +140,26 @@ if(MINITENSOR_BUILD_TESTS)
 
         add_test(NAME Phase${phase}Tests COMMAND ${test_target})
     endforeach()
+
+    # Diwali 2026 common test specification: TC01-TC50 (benchmarks run from
+    # verification/common_spec/run_common_tests.py). TC35 is expected to fail
+    # because the specification's expected values are wrong for its inputs.
+    add_executable(common_test_driver verification/common_spec/common_test_driver.cpp)
+    target_link_libraries(common_test_driver PRIVATE minitensor)
+    enable_warnings(common_test_driver)
+    if(MINITENSOR_WITH_OPENMP)
+        target_link_libraries(common_test_driver PRIVATE OpenMP::OpenMP_CXX)
+    endif()
+    add_test(NAME CommonSpecFunctional
+        COMMAND common_test_driver functional ${PROJECT_BINARY_DIR}/common_spec_functional.csv
+                MiniTensor --expect-fail=TC35
+    )
+
+    find_package(Eigen3 NO_MODULE QUIET)
+    if(TARGET Eigen3::Eigen)
+        add_executable(reference_eigen verification/common_spec/reference_eigen.cpp)
+        target_link_libraries(reference_eigen PRIVATE Eigen3::Eigen)
+    endif()
 endif()
 
 # --------------------------------------------------------------- examples

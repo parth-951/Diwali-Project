@@ -5,29 +5,49 @@
 
 namespace minitensor {
 
-Tensor add(const Tensor& a, const Tensor& b);
-Tensor subtract(const Tensor& a, const Tensor& b);
-Tensor multiply(const Tensor& a, const Tensor& b);
+// Every operation works on Tensor (double) and FloatTensor (float).
+// Both inputs must have the same element type.
 
-Tensor matmul(const Tensor& a, const Tensor& b);
-Tensor matmul_parallel(const Tensor& a, const Tensor& b);
+template <typename T>
+BasicTensor<T> add(const BasicTensor<T>& a, const BasicTensor<T>& b);
+template <typename T>
+BasicTensor<T> subtract(const BasicTensor<T>& a, const BasicTensor<T>& b);
+template <typename T>
+BasicTensor<T> multiply(const BasicTensor<T>& a, const BasicTensor<T>& b);
 
-Tensor transpose(const Tensor& a);
+template <typename T>
+BasicTensor<T> matmul(const BasicTensor<T>& a, const BasicTensor<T>& b);
+template <typename T>
+BasicTensor<T> matmul_parallel(const BasicTensor<T>& a, const BasicTensor<T>& b);
+
+template <typename T>
+BasicTensor<T> transpose(const BasicTensor<T>& a);
 
 // Phase 4: Broadcasting
-Tensor add_broadcast(const Tensor& a, const Tensor& b);
-Tensor subtract_broadcast(const Tensor& a, const Tensor& b);
-Tensor multiply_broadcast(const Tensor& a, const Tensor& b);
+template <typename T>
+BasicTensor<T> add_broadcast(const BasicTensor<T>& a, const BasicTensor<T>& b);
+template <typename T>
+BasicTensor<T> subtract_broadcast(const BasicTensor<T>& a, const BasicTensor<T>& b);
+template <typename T>
+BasicTensor<T> multiply_broadcast(const BasicTensor<T>& a, const BasicTensor<T>& b);
 
 // Phase 4: Reduction Operations
-double sum(const Tensor& a);
-double mean(const Tensor& a);
-double min(const Tensor& a);
-double max(const Tensor& a);
+// sum and mean accumulate in double for both element types.
+template <typename T>
+double sum(const BasicTensor<T>& a);
+template <typename T>
+double mean(const BasicTensor<T>& a);
+template <typename T>
+T min(const BasicTensor<T>& a);
+template <typename T>
+T max(const BasicTensor<T>& a);
 
-Tensor operator+(const Tensor& a, const Tensor& b);
-Tensor operator-(const Tensor& a, const Tensor& b);
-Tensor operator*(const Tensor& a, const Tensor& b);
+template <typename T>
+BasicTensor<T> operator+(const BasicTensor<T>& a, const BasicTensor<T>& b);
+template <typename T>
+BasicTensor<T> operator-(const BasicTensor<T>& a, const BasicTensor<T>& b);
+template <typename T>
+BasicTensor<T> operator*(const BasicTensor<T>& a, const BasicTensor<T>& b);
 
 }
 
