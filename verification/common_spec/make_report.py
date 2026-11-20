@@ -152,6 +152,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--results", default=str(HERE / "results"))
     parser.add_argument("--team", default="MiniTensor")
+    parser.add_argument("--members", default="Yashander Hooda, Arnav Madan, Manmeet Singh Manchanda, Parth Bhutna",
+                        help="Team member names, comma-separated")
     parser.add_argument("--eigen-version",
                         help="Eigen package version, e.g. 5.0.1. Eigen 5 still reports 3.x in its version macros")
     parser.add_argument("--output", default=str(ROOT / "COMMON_TEST_REPORT.md"))
@@ -275,7 +277,7 @@ def main():
 
     add("# Mini Tensor Library: Common Test Specification Report\n")
     add(f"Diwali 2026 Challenge, Common Test Specification v1.0 (17 November 2026). "
-        f"Team: **{args.team}**. Library: {library_name} "
+        f"Team: **{args.team}** ({args.members}). Library: {library_name} "
         f"([parth-951/Diwali-Project](https://github.com/parth-951/Diwali-Project)), "
         f"commit `{machine.get('git_commit', 'unknown')[:7]}` (`{machine.get('git_commit', 'unknown')}`). "
         f"Measured {machine.get('date', '')}.\n")
@@ -538,7 +540,7 @@ def main():
         "number or name if different.\n")
 
     add("## 8. Submission checklist\n")
-    authors = machine.get("team_members")
+    authors = args.members
     add(table(["Item", "Status"], [
         ["All 50 functional cases executed; no test silently omitted",
          f"Done: {len(functional)} of 50 executed and recorded"],
@@ -554,8 +556,9 @@ def main():
         ["Unsupported features marked NOT_SUPPORTED rather than PASS",
          f"Done: {f_counts['NOT_SUPPORTED']} features unsupported"],
         ["Team member names and library Git commit/hash included",
-         f"Commit included (`{machine.get('git_commit', 'unknown')[:7]}`). "
-         + ("Team members: " + authors if authors else "**Team member names still need to be added.**")],
+         f"Done: team members {authors}; commit `{machine.get('git_commit', 'unknown')[:7]}`"
+         if authors else f"Commit included (`{machine.get('git_commit', 'unknown')[:7]}`). "
+                         "**Team member names still need to be added.**"],
     ]))
     add("")
 
