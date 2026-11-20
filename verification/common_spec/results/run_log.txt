@@ -1,0 +1,829 @@
+build-gcc\common_test_driver.exe functional C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\functional.csv MiniTensor --expect-fail=TC35 [threads=1] -> 0
+TC01 PASS
+TC02 PASS
+TC03 PASS
+TC04 PASS
+TC05 PASS
+TC06 PASS
+TC07 PASS
+TC08 PASS
+TC09 PASS
+TC10 PASS
+TC11 PASS
+TC12 PASS
+TC13 PASS
+TC14 PASS
+TC15 PASS
+TC16 PASS
+TC17 PASS
+TC18 PASS
+TC19 PASS
+TC20 PASS
+TC21 PASS
+TC22 PASS
+TC23 PASS
+TC24 PASS
+TC25 PASS
+TC26 PASS
+TC27 PASS
+TC28 PASS
+TC29 PASS
+TC30 PASS
+TC31 PASS
+TC32 PASS
+TC33 PASS
+TC34 PASS
+TC35 FAIL
+TC36 PASS
+TC37 PASS
+TC38 PASS
+TC39 PASS
+TC40 PASS
+TC41 PASS
+TC42 PASS
+TC43 PASS
+TC44 PASS
+TC45 PASS
+TC46 PASS
+TC47 PASS
+TC48 PASS
+TC49 PASS
+TC50 PASS
+functional: 50 tests, 1 failed (0 unexpected); allocation counter (no sanitizer in this build)
+
+build-gcc\common_test_driver.exe indices C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+
+build-gcc\common_test_driver.exe bench PB01 100x100 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB01 100x100 run 1: PASS, median 0.0007 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB01 100x100 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB01 100x100 run 1: PASS, median 0.0004 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB01 100x100 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB01 100x100 run 1: PASS, median 0.0008 ms
+
+build-gcc\common_test_driver.exe bench PB02 1000x1000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB02 1000x1000 run 1: PASS, median 0.52135 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB02 1000x1000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB02 1000x1000 run 1: PASS, median 0.5157 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB02 1000x1000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB02 1000x1000 run 1: PASS, median 0.5006 ms
+
+build-gcc\common_test_driver.exe bench PB03 4000x4000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB03 4000x4000 run 1: PASS, median 9.16195 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB03 4000x4000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB03 4000x4000 run 1: PASS, median 9.4155 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB03 4000x4000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB03 4000x4000 run 1: PASS, median 8.9383 ms
+
+build-gcc\common_test_driver.exe bench PB04 1000x1000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB04 1000x1000 run 1: PASS, median 1.29835 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB04 1000x1000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB04 1000x1000 run 1: PASS, median 0.6382 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB04 1000x1000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB04 1000x1000 run 1: PASS, median 0.2572 ms
+
+build-gcc\common_test_driver.exe bench PB05 1000x1000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB05 1000x1000 run 1: PASS, median 6.7129 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB05 1000x1000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB05 1000x1000 run 1: PASS, median 0.07515 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB05 1000x1000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB05 1000x1000 run 1: PASS, median 0.3850 ms
+
+build-gcc\common_test_driver.exe bench PB06 100 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB06 100 run 1: PASS, median 0.0113 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB06 100 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB06 100 run 1: PASS, median 0.0009 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB06 100 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB06 100 run 1: PASS, median 0.0016 ms
+
+build-gcc\common_test_driver.exe bench PB06 500 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB06 500 run 1: PASS, median 0.2872 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB06 500 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB06 500 run 1: PASS, median 0.02885 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB06 500 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB06 500 run 1: PASS, median 0.1399 ms
+
+build-gcc\common_test_driver.exe bench PB06 1000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB06 1000 run 1: PASS, median 1.6251 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB06 1000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB06 1000 run 1: PASS, median 0.63045 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB06 1000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB06 1000 run 1: PASS, median 0.6581 ms
+
+build-gcc\common_test_driver.exe bench PB06 4000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB06 4000 run 1: PASS, median 27.0216 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB06 4000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB06 4000 run 1: PASS, median 10.6484 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB06 4000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB06 4000 run 1: PASS, median 10.7394 ms
+
+build-gcc\common_test_driver.exe bench PB07 100 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB07 100 run 1: PASS, median 0.0114 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB07 100 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB07 100 run 1: PASS, median 0.0009 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB07 100 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB07 100 run 1: PASS, median 0.0015 ms
+
+build-gcc\common_test_driver.exe bench PB07 500 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB07 500 run 1: PASS, median 0.28715 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB07 500 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB07 500 run 1: PASS, median 0.0298 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB07 500 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB07 500 run 1: PASS, median 0.1351 ms
+
+build-gcc\common_test_driver.exe bench PB07 1000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB07 1000 run 1: PASS, median 1.6055 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB07 1000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB07 1000 run 1: PASS, median 0.6463 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB07 1000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB07 1000 run 1: PASS, median 0.6567 ms
+
+build-gcc\common_test_driver.exe bench PB07 4000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB07 4000 run 1: PASS, median 26.9069 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB07 4000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB07 4000 run 1: PASS, median 10.6382 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB07 4000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB07 4000 run 1: PASS, median 10.3710 ms
+
+build-gcc\common_test_driver.exe bench PB08 100 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB08 100 run 1: PASS, median 0.0109 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB08 100 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB08 100 run 1: PASS, median 0.0008 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB08 100 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB08 100 run 1: PASS, median 0.0014 ms
+
+build-gcc\common_test_driver.exe bench PB08 500 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB08 500 run 1: PASS, median 0.2725 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB08 500 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB08 500 run 1: PASS, median 0.02675 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB08 500 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB08 500 run 1: PASS, median 0.1380 ms
+
+build-gcc\common_test_driver.exe bench PB08 1000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB08 1000 run 1: PASS, median 1.6278 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB08 1000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB08 1000 run 1: PASS, median 0.51455 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB08 1000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB08 1000 run 1: PASS, median 0.5150 ms
+
+build-gcc\common_test_driver.exe bench PB08 4000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB08 4000 run 1: PASS, median 27.1311 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB08 4000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB08 4000 run 1: PASS, median 12.3259 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB08 4000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB08 4000 run 1: PASS, median 19.8901 ms
+
+build-gcc\common_test_driver.exe bench PB09 64x64x64 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB09 64x64x64 run 1: PASS, median 0.0203 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB09 64x64x64 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB09 64x64x64 run 1: PASS, median 0.0158 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB09 64x64x64 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB09 64x64x64 run 1: PASS, median 0.0049 ms
+
+build-gcc\common_test_driver.exe bench PB10 256x256x256 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB10 256x256x256 run 1: PASS, median 1.3499 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB10 256x256x256 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB10 256x256x256 run 1: PASS, median 1.11125 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB10 256x256x256 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB10 256x256x256 run 1: PASS, median 0.3733 ms
+
+build-gcc\common_test_driver.exe bench PB11 512x512x512 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB11 512x512x512 run 1: PASS, median 11.0221 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB11 512x512x512 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB11 512x512x512 run 1: PASS, median 8.62045 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB11 512x512x512 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB11 512x512x512 run 1: PASS, median 2.4302 ms
+
+build-gcc\common_test_driver.exe bench MATMUL 32x32x32 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+MATMUL 32x32x32 run 1: PASS, median 0.00355 ms, threads 1
+
+build-gcc\reference_eigen.exe bench MATMUL 32x32x32 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+MATMUL 32x32x32 run 1: PASS, median 0.0022 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench MATMUL 32x32x32 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+MATMUL 32x32x32 run 1: PASS, median 0.0017 ms
+
+build-gcc\common_test_driver.exe bench MATMUL 128x128x128 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+MATMUL 128x128x128 run 1: PASS, median 0.1665 ms, threads 1
+
+build-gcc\reference_eigen.exe bench MATMUL 128x128x128 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+MATMUL 128x128x128 run 1: PASS, median 0.12205 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench MATMUL 128x128x128 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+MATMUL 128x128x128 run 1: PASS, median 0.0616 ms
+
+build-gcc\common_test_driver.exe bench MATMUL 128x256x64 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+MATMUL 128x256x64 run 1: PASS, median 0.15825 ms, threads 1
+
+build-gcc\reference_eigen.exe bench MATMUL 128x256x64 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+MATMUL 128x256x64 run 1: PASS, median 0.21655 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench MATMUL 128x256x64 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+MATMUL 128x256x64 run 1: PASS, median 0.0361 ms
+
+build-gcc\common_test_driver.exe bench MATMUL 512x128x256 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+MATMUL 512x128x256 run 1: PASS, median 1.31715 ms, threads 1
+
+build-gcc\reference_eigen.exe bench MATMUL 512x128x256 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+MATMUL 512x128x256 run 1: PASS, median 0.9835 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench MATMUL 512x128x256 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+MATMUL 512x128x256 run 1: PASS, median 0.3389 ms
+
+build-gcc\common_test_driver.exe bench MATMUL 1024x64x512 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+MATMUL 1024x64x512 run 1: PASS, median 3.27395 ms, threads 1
+
+build-gcc\reference_eigen.exe bench MATMUL 1024x64x512 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+MATMUL 1024x64x512 run 1: PASS, median 2.39395 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench MATMUL 1024x64x512 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+MATMUL 1024x64x512 run 1: PASS, median 0.9785 ms
+
+build-gcc\common_test_driver.exe bench PB12 1000x1000 to 100x10000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB12 1000x1000 to 100x10000 run 1: PASS, median 0.0794 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB12 1000x1000 to 100x10000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB12 1000x1000 to 100x10000 run 1: PASS, median 0.0007 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB12 1000x1000 to 100x10000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB12 1000x1000 to 100x10000 run 1: PASS, median 0.0948 ms
+
+build-gcc\common_test_driver.exe bench PB01 100x100 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB01 100x100 run 2: PASS, median 0.0007 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB01 100x100 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB01 100x100 run 2: PASS, median 0.0004 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB01 100x100 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB01 100x100 run 2: PASS, median 0.0008 ms
+
+build-gcc\common_test_driver.exe bench PB02 1000x1000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB02 1000x1000 run 2: PASS, median 0.87785 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB02 1000x1000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB02 1000x1000 run 2: PASS, median 0.7849 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB02 1000x1000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB02 1000x1000 run 2: PASS, median 0.7196 ms
+
+build-gcc\common_test_driver.exe bench PB03 4000x4000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB03 4000x4000 run 2: PASS, median 13.0037 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB03 4000x4000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB03 4000x4000 run 2: PASS, median 9.6864 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB03 4000x4000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB03 4000x4000 run 2: PASS, median 13.2880 ms
+
+build-gcc\common_test_driver.exe bench PB04 1000x1000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB04 1000x1000 run 2: PASS, median 1.3179 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB04 1000x1000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB04 1000x1000 run 2: PASS, median 0.6468 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB04 1000x1000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB04 1000x1000 run 2: PASS, median 0.2542 ms
+
+build-gcc\common_test_driver.exe bench PB05 1000x1000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB05 1000x1000 run 2: PASS, median 5.6418 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB05 1000x1000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB05 1000x1000 run 2: PASS, median 0.07315 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB05 1000x1000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB05 1000x1000 run 2: PASS, median 0.4851 ms
+
+build-gcc\common_test_driver.exe bench PB06 100 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB06 100 run 2: PASS, median 0.0115 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB06 100 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB06 100 run 2: PASS, median 0.0009 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB06 100 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB06 100 run 2: PASS, median 0.0015 ms
+
+build-gcc\common_test_driver.exe bench PB06 500 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB06 500 run 2: PASS, median 0.2872 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB06 500 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB06 500 run 2: PASS, median 0.0282 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB06 500 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB06 500 run 2: PASS, median 0.1436 ms
+
+build-gcc\common_test_driver.exe bench PB06 1000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB06 1000 run 2: PASS, median 1.6326 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB06 1000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB06 1000 run 2: PASS, median 0.6436 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB06 1000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB06 1000 run 2: PASS, median 0.6076 ms
+
+build-gcc\common_test_driver.exe bench PB06 4000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB06 4000 run 2: PASS, median 33.3995 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB06 4000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB06 4000 run 2: PASS, median 14.1172 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB06 4000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB06 4000 run 2: PASS, median 13.8773 ms
+
+build-gcc\common_test_driver.exe bench PB07 100 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB07 100 run 2: PASS, median 0.0106 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB07 100 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB07 100 run 2: PASS, median 0.0008 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB07 100 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB07 100 run 2: PASS, median 0.0014 ms
+
+build-gcc\common_test_driver.exe bench PB07 500 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB07 500 run 2: PASS, median 0.2722 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB07 500 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB07 500 run 2: PASS, median 0.02735 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB07 500 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB07 500 run 2: PASS, median 0.1253 ms
+
+build-gcc\common_test_driver.exe bench PB07 1000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB07 1000 run 2: PASS, median 1.53815 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB07 1000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB07 1000 run 2: PASS, median 0.5401 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB07 1000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB07 1000 run 2: PASS, median 0.4758 ms
+
+build-gcc\common_test_driver.exe bench PB07 4000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB07 4000 run 2: PASS, median 25.9011 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB07 4000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB07 4000 run 2: PASS, median 10.3859 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB07 4000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB07 4000 run 2: PASS, median 12.5154 ms
+
+build-gcc\common_test_driver.exe bench PB08 100 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB08 100 run 2: PASS, median 0.0106 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB08 100 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB08 100 run 2: PASS, median 0.0008 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB08 100 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB08 100 run 2: PASS, median 0.0015 ms
+
+build-gcc\common_test_driver.exe bench PB08 500 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB08 500 run 2: PASS, median 0.29095 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB08 500 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB08 500 run 2: PASS, median 0.028 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB08 500 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB08 500 run 2: PASS, median 0.1320 ms
+
+build-gcc\common_test_driver.exe bench PB08 1000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB08 1000 run 2: PASS, median 1.6691 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB08 1000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB08 1000 run 2: PASS, median 0.5977 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB08 1000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB08 1000 run 2: PASS, median 0.5637 ms
+
+build-gcc\common_test_driver.exe bench PB08 4000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB08 4000 run 2: PASS, median 29.3251 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB08 4000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB08 4000 run 2: PASS, median 12.2216 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB08 4000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB08 4000 run 2: PASS, median 12.7033 ms
+
+build-gcc\common_test_driver.exe bench PB09 64x64x64 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB09 64x64x64 run 2: PASS, median 0.0201 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB09 64x64x64 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB09 64x64x64 run 2: PASS, median 0.0157 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB09 64x64x64 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB09 64x64x64 run 2: PASS, median 0.0048 ms
+
+build-gcc\common_test_driver.exe bench PB10 256x256x256 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB10 256x256x256 run 2: PASS, median 1.2753 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB10 256x256x256 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB10 256x256x256 run 2: PASS, median 1.0085 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB10 256x256x256 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB10 256x256x256 run 2: PASS, median 0.2846 ms
+
+build-gcc\common_test_driver.exe bench PB11 512x512x512 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB11 512x512x512 run 2: PASS, median 10.3393 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB11 512x512x512 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB11 512x512x512 run 2: PASS, median 7.4338 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB11 512x512x512 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB11 512x512x512 run 2: PASS, median 2.2291 ms
+
+build-gcc\common_test_driver.exe bench MATMUL 32x32x32 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+MATMUL 32x32x32 run 2: PASS, median 0.003 ms, threads 1
+
+build-gcc\reference_eigen.exe bench MATMUL 32x32x32 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+MATMUL 32x32x32 run 2: PASS, median 0.0021 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench MATMUL 32x32x32 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+MATMUL 32x32x32 run 2: PASS, median 0.0015 ms
+
+build-gcc\common_test_driver.exe bench MATMUL 128x128x128 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+MATMUL 128x128x128 run 2: PASS, median 0.15355 ms, threads 1
+
+build-gcc\reference_eigen.exe bench MATMUL 128x128x128 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+MATMUL 128x128x128 run 2: PASS, median 0.11135 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench MATMUL 128x128x128 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+MATMUL 128x128x128 run 2: PASS, median 0.0520 ms
+
+build-gcc\common_test_driver.exe bench MATMUL 128x256x64 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+MATMUL 128x256x64 run 2: PASS, median 0.1705 ms, threads 1
+
+build-gcc\reference_eigen.exe bench MATMUL 128x256x64 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+MATMUL 128x256x64 run 2: PASS, median 0.1132 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench MATMUL 128x256x64 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+MATMUL 128x256x64 run 2: PASS, median 0.0335 ms
+
+build-gcc\common_test_driver.exe bench MATMUL 512x128x256 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+MATMUL 512x128x256 run 2: PASS, median 1.2519 ms, threads 1
+
+build-gcc\reference_eigen.exe bench MATMUL 512x128x256 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+MATMUL 512x128x256 run 2: PASS, median 0.89255 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench MATMUL 512x128x256 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+MATMUL 512x128x256 run 2: PASS, median 0.3089 ms
+
+build-gcc\common_test_driver.exe bench MATMUL 1024x64x512 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+MATMUL 1024x64x512 run 2: PASS, median 2.57345 ms, threads 1
+
+build-gcc\reference_eigen.exe bench MATMUL 1024x64x512 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+MATMUL 1024x64x512 run 2: PASS, median 2.1229 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench MATMUL 1024x64x512 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+MATMUL 1024x64x512 run 2: PASS, median 0.7849 ms
+
+build-gcc\common_test_driver.exe bench PB12 1000x1000 to 100x10000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB12 1000x1000 to 100x10000 run 2: PASS, median 0.0808 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB12 1000x1000 to 100x10000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB12 1000x1000 to 100x10000 run 2: PASS, median 0.0006 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB12 1000x1000 to 100x10000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB12 1000x1000 to 100x10000 run 2: PASS, median 0.0907 ms
+
+build-gcc\common_test_driver.exe bench PB01 100x100 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB01 100x100 run 3: PASS, median 0.0006 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB01 100x100 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB01 100x100 run 3: PASS, median 0.0003 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB01 100x100 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB01 100x100 run 3: PASS, median 0.0008 ms
+
+build-gcc\common_test_driver.exe bench PB02 1000x1000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB02 1000x1000 run 3: PASS, median 0.49835 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB02 1000x1000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB02 1000x1000 run 3: PASS, median 0.487 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB02 1000x1000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB02 1000x1000 run 3: PASS, median 0.4610 ms
+
+build-gcc\common_test_driver.exe bench PB03 4000x4000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB03 4000x4000 run 3: PASS, median 8.5102 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB03 4000x4000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB03 4000x4000 run 3: PASS, median 9.1866 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB03 4000x4000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB03 4000x4000 run 3: PASS, median 8.2826 ms
+
+build-gcc\common_test_driver.exe bench PB04 1000x1000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB04 1000x1000 run 3: PASS, median 1.2893 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB04 1000x1000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB04 1000x1000 run 3: PASS, median 0.643 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB04 1000x1000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB04 1000x1000 run 3: PASS, median 0.2541 ms
+
+build-gcc\common_test_driver.exe bench PB05 1000x1000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB05 1000x1000 run 3: PASS, median 3.57455 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB05 1000x1000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB05 1000x1000 run 3: PASS, median 0.0732 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB05 1000x1000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB05 1000x1000 run 3: PASS, median 0.3865 ms
+
+build-gcc\common_test_driver.exe bench PB06 100 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB06 100 run 3: PASS, median 0.0112 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB06 100 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB06 100 run 3: PASS, median 0.0009 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB06 100 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB06 100 run 3: PASS, median 0.0015 ms
+
+build-gcc\common_test_driver.exe bench PB06 500 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB06 500 run 3: PASS, median 0.28085 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB06 500 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB06 500 run 3: PASS, median 0.0299 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB06 500 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB06 500 run 3: PASS, median 0.1473 ms
+
+build-gcc\common_test_driver.exe bench PB06 1000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB06 1000 run 3: PASS, median 1.7838 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB06 1000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB06 1000 run 3: PASS, median 0.5784 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB06 1000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB06 1000 run 3: PASS, median 0.5618 ms
+
+build-gcc\common_test_driver.exe bench PB06 4000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB06 4000 run 3: PASS, median 29.0069 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB06 4000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB06 4000 run 3: PASS, median 10.2449 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB06 4000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB06 4000 run 3: PASS, median 12.1918 ms
+
+build-gcc\common_test_driver.exe bench PB07 100 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB07 100 run 3: PASS, median 0.0111 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB07 100 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB07 100 run 3: PASS, median 0.0009 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB07 100 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB07 100 run 3: PASS, median 0.0015 ms
+
+build-gcc\common_test_driver.exe bench PB07 500 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB07 500 run 3: PASS, median 0.28435 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB07 500 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB07 500 run 3: PASS, median 0.0279 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB07 500 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB07 500 run 3: PASS, median 0.2412 ms
+
+build-gcc\common_test_driver.exe bench PB07 1000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB07 1000 run 3: PASS, median 1.98495 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB07 1000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB07 1000 run 3: PASS, median 1.00685 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB07 1000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB07 1000 run 3: PASS, median 1.0837 ms
+
+build-gcc\common_test_driver.exe bench PB07 4000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB07 4000 run 3: PASS, median 32.0426 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB07 4000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB07 4000 run 3: PASS, median 11.1962 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB07 4000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB07 4000 run 3: PASS, median 10.4342 ms
+
+build-gcc\common_test_driver.exe bench PB08 100 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB08 100 run 3: PASS, median 0.0115 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB08 100 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB08 100 run 3: PASS, median 0.0009 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB08 100 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB08 100 run 3: PASS, median 0.0015 ms
+
+build-gcc\common_test_driver.exe bench PB08 500 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB08 500 run 3: PASS, median 0.28375 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB08 500 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB08 500 run 3: PASS, median 0.0279 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB08 500 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB08 500 run 3: PASS, median 0.1935 ms
+
+build-gcc\common_test_driver.exe bench PB08 1000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB08 1000 run 3: PASS, median 1.6123 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB08 1000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB08 1000 run 3: PASS, median 0.604 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB08 1000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB08 1000 run 3: PASS, median 0.5452 ms
+
+build-gcc\common_test_driver.exe bench PB08 4000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB08 4000 run 3: PASS, median 27.5909 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB08 4000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB08 4000 run 3: PASS, median 10.7115 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB08 4000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB08 4000 run 3: PASS, median 10.4010 ms
+
+build-gcc\common_test_driver.exe bench PB09 64x64x64 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB09 64x64x64 run 3: PASS, median 0.0195 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB09 64x64x64 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB09 64x64x64 run 3: PASS, median 0.015 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB09 64x64x64 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB09 64x64x64 run 3: PASS, median 0.0044 ms
+
+build-gcc\common_test_driver.exe bench PB10 256x256x256 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB10 256x256x256 run 3: PASS, median 1.20655 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB10 256x256x256 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB10 256x256x256 run 3: PASS, median 1.07185 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB10 256x256x256 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB10 256x256x256 run 3: PASS, median 0.3252 ms
+
+build-gcc\common_test_driver.exe bench PB11 512x512x512 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB11 512x512x512 run 3: PASS, median 10.9956 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB11 512x512x512 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB11 512x512x512 run 3: PASS, median 7.95885 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB11 512x512x512 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB11 512x512x512 run 3: PASS, median 2.3573 ms
+
+build-gcc\common_test_driver.exe bench MATMUL 32x32x32 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+MATMUL 32x32x32 run 3: PASS, median 0.0067 ms, threads 1
+
+build-gcc\reference_eigen.exe bench MATMUL 32x32x32 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+MATMUL 32x32x32 run 3: PASS, median 0.0022 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench MATMUL 32x32x32 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+MATMUL 32x32x32 run 3: PASS, median 0.0016 ms
+
+build-gcc\common_test_driver.exe bench MATMUL 128x128x128 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+MATMUL 128x128x128 run 3: PASS, median 0.1468 ms, threads 1
+
+build-gcc\reference_eigen.exe bench MATMUL 128x128x128 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+MATMUL 128x128x128 run 3: PASS, median 0.1208 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench MATMUL 128x128x128 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+MATMUL 128x128x128 run 3: PASS, median 0.0592 ms
+
+build-gcc\common_test_driver.exe bench MATMUL 128x256x64 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+MATMUL 128x256x64 run 3: PASS, median 0.15635 ms, threads 1
+
+build-gcc\reference_eigen.exe bench MATMUL 128x256x64 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+MATMUL 128x256x64 run 3: PASS, median 0.11845 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench MATMUL 128x256x64 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+MATMUL 128x256x64 run 3: PASS, median 0.0354 ms
+
+build-gcc\common_test_driver.exe bench MATMUL 512x128x256 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+MATMUL 512x128x256 run 3: PASS, median 1.1453 ms, threads 1
+
+build-gcc\reference_eigen.exe bench MATMUL 512x128x256 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+MATMUL 512x128x256 run 3: PASS, median 0.91985 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench MATMUL 512x128x256 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+MATMUL 512x128x256 run 3: PASS, median 0.3518 ms
+
+build-gcc\common_test_driver.exe bench MATMUL 1024x64x512 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+MATMUL 1024x64x512 run 3: PASS, median 2.76075 ms, threads 1
+
+build-gcc\reference_eigen.exe bench MATMUL 1024x64x512 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+MATMUL 1024x64x512 run 3: PASS, median 2.2351 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench MATMUL 1024x64x512 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+MATMUL 1024x64x512 run 3: PASS, median 0.7912 ms
+
+build-gcc\common_test_driver.exe bench PB12 1000x1000 to 100x10000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor.csv [threads=1] -> 0
+PB12 1000x1000 to 100x10000 run 3: PASS, median 0.0789 ms, threads 1
+
+build-gcc\reference_eigen.exe bench PB12 1000x1000 to 100x10000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_eigen.csv [threads=1] -> 0
+PB12 1000x1000 to 100x10000 run 3: PASS, median 0.0003 ms
+
+C:\msys64\ucrt64\bin\python.exe C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\reference_numpy.py bench PB12 1000x1000 to 100x10000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_numpy.csv C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\pb05_indices.bin [threads=1] -> 0
+PB12 1000x1000 to 100x10000 run 3: PASS, median 0.0868 ms
+
+build-gcc\common_test_driver.exe bench PB06 1000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor_threads.csv [threads=1] -> 0
+PB06 1000 run 1: PASS, median 1.59175 ms, threads 1
+
+build-gcc\common_test_driver.exe bench PB06 1000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor_threads.csv [threads=2] -> 0
+PB06 1000 run 1: PASS, median 1.58465 ms, threads 2
+
+build-gcc\common_test_driver.exe bench PB06 1000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor_threads.csv [threads=4] -> 0
+PB06 1000 run 1: PASS, median 1.59025 ms, threads 4
+
+build-gcc\common_test_driver.exe bench PB06 1000 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor_threads.csv [threads=8] -> 0
+PB06 1000 run 1: PASS, median 1.61615 ms, threads 8
+
+build-gcc\common_test_driver.exe bench PB11 512x512x512 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor_threads.csv [threads=1] -> 0
+PB11 512x512x512 run 1: PASS, median 10.8829 ms, threads 1
+
+build-gcc\common_test_driver.exe bench PB11 512x512x512 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor_threads.csv [threads=2] -> 0
+PB11 512x512x512 run 1: PASS, median 5.57865 ms, threads 2
+
+build-gcc\common_test_driver.exe bench PB11 512x512x512 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor_threads.csv [threads=4] -> 0
+PB11 512x512x512 run 1: PASS, median 3.19445 ms, threads 4
+
+build-gcc\common_test_driver.exe bench PB11 512x512x512 1 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor_threads.csv [threads=8] -> 0
+PB11 512x512x512 run 1: PASS, median 2.28565 ms, threads 8
+
+build-gcc\common_test_driver.exe bench PB06 1000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor_threads.csv [threads=1] -> 0
+PB06 1000 run 2: PASS, median 1.61905 ms, threads 1
+
+build-gcc\common_test_driver.exe bench PB06 1000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor_threads.csv [threads=2] -> 0
+PB06 1000 run 2: PASS, median 1.5615 ms, threads 2
+
+build-gcc\common_test_driver.exe bench PB06 1000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor_threads.csv [threads=4] -> 0
+PB06 1000 run 2: PASS, median 1.5538 ms, threads 4
+
+build-gcc\common_test_driver.exe bench PB06 1000 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor_threads.csv [threads=8] -> 0
+PB06 1000 run 2: PASS, median 1.56075 ms, threads 8
+
+build-gcc\common_test_driver.exe bench PB11 512x512x512 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor_threads.csv [threads=1] -> 0
+PB11 512x512x512 run 2: PASS, median 10.3169 ms, threads 1
+
+build-gcc\common_test_driver.exe bench PB11 512x512x512 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor_threads.csv [threads=2] -> 0
+PB11 512x512x512 run 2: PASS, median 5.4671 ms, threads 2
+
+build-gcc\common_test_driver.exe bench PB11 512x512x512 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor_threads.csv [threads=4] -> 0
+PB11 512x512x512 run 2: PASS, median 3.22505 ms, threads 4
+
+build-gcc\common_test_driver.exe bench PB11 512x512x512 2 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor_threads.csv [threads=8] -> 0
+PB11 512x512x512 run 2: PASS, median 2.6278 ms, threads 8
+
+build-gcc\common_test_driver.exe bench PB06 1000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor_threads.csv [threads=1] -> 0
+PB06 1000 run 3: PASS, median 1.60765 ms, threads 1
+
+build-gcc\common_test_driver.exe bench PB06 1000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor_threads.csv [threads=2] -> 0
+PB06 1000 run 3: PASS, median 1.66915 ms, threads 2
+
+build-gcc\common_test_driver.exe bench PB06 1000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor_threads.csv [threads=4] -> 0
+PB06 1000 run 3: PASS, median 1.58075 ms, threads 4
+
+build-gcc\common_test_driver.exe bench PB06 1000 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor_threads.csv [threads=8] -> 0
+PB06 1000 run 3: PASS, median 1.5194 ms, threads 8
+
+build-gcc\common_test_driver.exe bench PB11 512x512x512 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor_threads.csv [threads=1] -> 0
+PB11 512x512x512 run 3: PASS, median 10.4584 ms, threads 1
+
+build-gcc\common_test_driver.exe bench PB11 512x512x512 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor_threads.csv [threads=2] -> 0
+PB11 512x512x512 run 3: PASS, median 5.70225 ms, threads 2
+
+build-gcc\common_test_driver.exe bench PB11 512x512x512 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor_threads.csv [threads=4] -> 0
+PB11 512x512x512 run 3: PASS, median 3.31975 ms, threads 4
+
+build-gcc\common_test_driver.exe bench PB11 512x512x512 3 C:\Users\RH\Desktop\New folder\Diwali-Project\verification\common_spec\results\raw_minitensor_threads.csv [threads=8] -> 0
+PB11 512x512x512 run 3: PASS, median 2.805 ms, threads 8
+

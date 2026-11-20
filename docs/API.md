@@ -11,7 +11,24 @@ Everything lives in the `minitensor` namespace. Include `<minitensor/minitensor.
 | `minitensor/Shape.h` | `Shape` (dimensions and strides) |
 | `minitensor/Storage.h` | `Storage` (aligned buffer) |
 
-Elements are `double`. Tensors are stored contiguously in **row-major** order, so the last index changes fastest.
+Tensors are stored contiguously in **row-major** order, so the last index changes fastest.
+
+### Element types
+
+`BasicTensor<T>` and `BasicStorage<T>` are templates for `T = float` or `double`:
+
+| Name | Element type |
+|---|---|
+| `Tensor` | `double` (the default; every example below uses it) |
+| `FloatTensor` | `float` (float32) |
+
+Every operation in this reference works on both, as long as both inputs have the same element type. `sum` and `mean` always return `double` and accumulate in `double`; `min` and `max` return the element type. The CUDA backend (`Cuda.h`) works on `Tensor` only.
+
+```cpp
+FloatTensor a({2, 2}, 1.5f);
+FloatTensor b({2, 2}, 2.0f);
+FloatTensor c = matmul(a, b);   // float32 throughout
+```
 
 ---
 

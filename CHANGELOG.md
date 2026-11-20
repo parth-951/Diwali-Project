@@ -6,6 +6,8 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ### Added
 
+- float32 tensors: `BasicTensor<T>` and `BasicStorage<T>` for `float` and `double`, with the alias `FloatTensor`. `Tensor` is still the `double` alias, so existing code is unchanged. All operations accept both element types.
+- `verification/common_spec/`: drivers for the Diwali 2026 Common Test Specification v1.0 (TC01-TC50, PB01-PB12 and the scaling runs), with Eigen and NumPy references.
 - Optional CUDA backend (`minitensor/Cuda.h`, `-DMINITENSOR_USE_CUDA=ON`, off by default): GPU `matmul` through cuBLAS, plus `transpose`, element-wise operations, broadcasting and `sum`.
 - `verification/`: a comparison with NumPy, CPU and CUDA benchmarks, and reproducibility checks. `run_verification.py` generates `RESULT_VERIFICATION.md` from a real run.
 

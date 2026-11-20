@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-20 22:23:56",
+  "os": "Windows-11-10.0.26300-SP0",
+  "logical_processors": 16,
+  "python": "3.14.5",
+  "git_commit": "494931bf1dbae28a7093cca8d4e70440b15e288f",
+  "git_branch": "float32-common-tests",
+  "git_uncommitted_files": null,
+  "student_compiler": "g++ (Rev5, Built by MSYS2 project) 16.1.0\nCopyright (C) 2026 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+  "build_flags": "g++ 16.1.0 (MSYS2 UCRT64): -std=c++17 -O3 -DNDEBUG -fopenmp (MiniTensor); -std=c++17 -O3 -DNDEBUG, EIGEN_DONT_PARALLELIZE (Eigen). No -march flags",
+  "threads": "OMP_NUM_THREADS=1 and OPENBLAS_NUM_THREADS=1 for every single-thread run; Eigen built with EIGEN_DONT_PARALLELIZE",
+  "numpy": "2.4.6",
+  "numpy_blas": "openblas 0.3.33",
+  "cpu": "AMD Ryzen 7 7840HS w/ Radeon 780M Graphics",
+  "physical_cores": "8",
+  "max_clock_mhz": "3801",
+  "ram_gb": "15.3",
+  "power_source": "AC",
+  "power_plan": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+  "timer": "std::chrono::steady_clock uses QueryPerformanceCounter at 10000000 Hz (resolution 100 ns)"
+}
